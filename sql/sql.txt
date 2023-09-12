@@ -1,0 +1,99 @@
+-- Create Database Library
+
+CREATE DATABASE Library;
+
+-- Create Admin_Login Table
+
+CREATE TABLE Admin_Login (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    User_Name VARCHAR(255) NOT NULL,
+    Password VARCHAR(255) NOT NULL
+);
+
+-- Create Books Table
+
+CREATE TABLE Books (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    Book_ID VARCHAR(255) NOT NULL,
+    Title VARCHAR(255) NOT NULL,
+    Author VARCHAR(255) NOT NULL,
+    Genre VARCHAR(255) NOT NULL,
+    Quantity VARCHAR(255) NOT NULL
+);
+
+-- Create IssueBook Table
+
+CREATE TABLE IssueBook (
+    ID INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    Book_ID VARCHAR(255),
+    Patron_ID VARCHAR(255),
+    Patron_Name VARCHAR(255),
+    Title VARCHAR(255),
+    Author VARCHAR(255),
+    Genre VARCHAR(255),
+    Issue_Date VARCHAR(255),
+    Book_Issue_No VARCHAR(255)
+);
+
+-- Create Table IssueBookHistory
+
+CREATE TABLE IssueBookHistory (
+    ID INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    Book_ID VARCHAR(255),
+    Patron_ID VARCHAR(255),
+    Patron_Name VARCHAR(255),
+    Title VARCHAR(255),
+    Author VARCHAR(255),
+    Genre VARCHAR(255),
+    Issue_Date VARCHAR(255),
+    Book_Issue_No VARCHAR(255)
+);
+
+-- Create Librarian_Login Table
+
+CREATE TABLE Librarian_Login (
+    ID INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    User_Name VARCHAR(255),
+    Password VARCHAR(255),
+    Phone VARCHAR(255)
+);
+
+--Create Patron Table
+
+CREATE TABLE Patron (
+    ID INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    Patron_ID VARCHAR(255),
+    Name VARCHAR(255),
+    Phone_No VARCHAR(255)
+);
+
+-- Creta ReturnBook Table
+
+CREATE TABLE ReturnBook (
+    ID INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    Patron_ID VARCHAR(255),
+    Patron_Name VARCHAR(255),
+    Book_ID VARCHAR(255),
+    Title VARCHAR(255),
+    Issue_Date VARCHAR(255),
+    Return_Date VARCHAR(255),
+    Fine VARCHAR(255),
+    Book_Return_No VARCHAR(255)
+);
+
+-- Creta ReturnBookHistory Table
+
+CREATE TABLE ReturnBookHistory (
+    ID INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    Patron_ID VARCHAR(255),
+    Patron_Name VARCHAR(255),
+    Book_ID VARCHAR(255),
+    Title VARCHAR(255),
+    Issue_Date VARCHAR(255),
+    Return_Date VARCHAR(255),
+    Fine VARCHAR(255),
+    Book_Return_No VARCHAR(255)
+);
+
+
+
